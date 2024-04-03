@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+
+/.github exp_personaort-ignore
+CHANGELOG.md exp_personaort-ignore
+.styleci_persona.yml exp_personaort-ignore
