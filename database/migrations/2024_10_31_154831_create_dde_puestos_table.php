@@ -10,12 +10,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('dde_puestos', function (Blueprint $table) {
-            $table->increments('id_puesto'); // Cambiado de integer('id_p')->unsigned()->autoIncrement()
+            $table->increments('id_puesto'); 
             $table->integer('item_puesto')->nullable();
             $table->string('denominacion_puesto', 50)->nullable();
             $table->integer('salario_puesto')->nullable();
             $table->string('salario_literal_puesto', 50)->nullable();
-            $table->text('objetivo_puesto')->nullable(); // Cambiado de text('objetivo_puesto_p', 50)->nullable()
+            $table->text('objetivo_puesto')->nullable(); 
             $table->integer('departamento_id')->unsigned();
             $table->foreign('departamento_id')->references('id_departamento')->on('dde_departamentos');
             //$table->foreignId('persona_actual_id')->nullable()->constrained('dde_personas'); --> descomentar

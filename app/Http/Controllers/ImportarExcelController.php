@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\ImportExcelData;
+use App\Imports\ExcelDataImport;
 use App\Models\ImportLog;
 
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class ImportarExcelController extends Controller
         try {
             $userAuth = Auth::user();
             $file = $request->file('archivoPlanilla');
-            Excel::import(new ImportExcelData, $file);
+            Excel::import(new ExcelDataImport, $file);
             ImportLog::create([
                 'usuario_id' => $userAuth->id,
             ]);
